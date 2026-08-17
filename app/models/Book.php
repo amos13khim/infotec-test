@@ -8,6 +8,8 @@ use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
 use yii\helpers\ArrayHelper;
 
+use app\services\SmsService;
+
 class Book extends ActiveRecord
 {
     public ?array $authorIds = [];
