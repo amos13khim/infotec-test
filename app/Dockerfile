@@ -15,8 +15,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /var/www/html
 
 COPY . /var/www/html
-RUN rm -rf /var/www/html/vendor \
-    && composer install --no-interaction --prefer-dist --no-progress
+RUN if [ ! -d vendor ]; then composer install --no-interaction --prefer-dist --no-progress; fi
 
 RUN chown -R www-data:www-data /var/www/html
 RUN a2enmod rewrite
