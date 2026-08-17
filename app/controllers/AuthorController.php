@@ -23,7 +23,7 @@ class AuthorController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['index', 'view'],
+                        'actions' => ['index', 'view', 'subscribe'],
                         'roles' => ['?', '@'],
                     ],
                     [
