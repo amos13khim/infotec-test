@@ -45,9 +45,5 @@ class Author extends ActiveRecord
         return $this->hasMany(Subscription::class, ['author_id' => 'id']);
     }
 
-    public function afterFind(): void
-    {
-        parent::afterFind();
-        $this->bookIds = ArrayHelper::getColumn($this->books, 'id');
-    }
+
 }

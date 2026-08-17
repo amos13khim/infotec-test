@@ -47,11 +47,7 @@ class Book extends ActiveRecord
             ->orderBy(['full_name' => SORT_ASC]);
     }
 
-    public function afterFind(): void
-    {
-        parent::afterFind();
-        $this->authorIds = ArrayHelper::getColumn($this->authors, 'id');
-    }
+
 
     public function afterSave($insert, $changedAttributes): void
     {
